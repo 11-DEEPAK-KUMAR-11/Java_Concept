@@ -1,0 +1,8 @@
+Q1) Explain why Java is platform independent ?
+Answer-
+      Java is platform independent because of bytecode or .class file. whenever we write program
+      code then it passes through compiler by writing command javac FileName then compiler convert 
+      this program code into bytecode or .class file and this file is platform independent it can be
+      executed by the any Operating system like Mac,windows, linux etc. 
+      hence we can generate .class file from any OS then this code run in any Operating system 
+      this features makes java Platform independent.

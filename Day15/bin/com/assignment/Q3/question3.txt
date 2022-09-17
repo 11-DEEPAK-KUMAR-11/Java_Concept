@@ -1,0 +1,77 @@
+equals() and hashcode() method in Java:
+
+The Object class defines both the equals() and hashCode() methods, which means that these two methods are implicitly
+defined in every Java class, including the ones we create:
+We need to override these two methods inside our java classes if we want to make 2 object of our java class logically
+equal.
+
+Example
+Student s1 = new Student(10,"Ram",500); //roll,name,marks
+Student s2 = new Student(10,"Ram",500); //roll,name,marks
+
+Note: technically at memory level both objects are different, but if we want to make
+both object s1 and s2 equal logically then we need to override both
+method inside the Student class.
+
+
+equals() method:
+The java equals() is a method of lang.Object class, and it is used to compare two objects.
+To compare two objects that whether they are the same, it compares the values of both the object's attributes.
+By default, two objects will be the same only if stored in the same memory location.
+
+Syntax:
+public boolean equals(Object obj);
+
+It takes the reference object as the parameter, with which we need to make the comparison. and returns the true if both
+the objects are the same, else returns false.
+
+General Contract of equals() method:
+There are some general principles defined by Java.
+
+that must be followed while implementing the equals() method in Java. The equals() method must be:
+reflexive: An object x must be equal to itself, which means, for object x, equals(x) should return true.
+symmetric: for two given objects x and y, x.equals(y) must return true if and only if y.equals(x) returns true.
+transitive: for any objects x, y, and z, if x.equals(y) returns true and y.equals(z) returns true, then x.equals(z) should
+return true.
+consistent: for any objects x and y, the value of x.equals(y) should change, only if the property in equals() changes.
+For any object x, the equals(null) must return false.
+In Object class this equals() method is defiened as follows:
+
+public boolean equals(Object o){
+if(o == null)
+return false;
+else
+return this == o;
+}
+
+hashCode() method:
+A hashcode is an integer value associated with every object in Java, facilitating the hashing in hash tables.
+To get this hashcode value for an object, we can use the hashcode() method in Java. It is the means hashcode()
+method that returns the integer hashcode value of the given object.
+Since this method is defined in the Object class, hence it is inherited by user-defined classes also.
+The hashcode() method returns the same hash value when called on two objects, which are equal according to the
+equals() method. And if the objects are unequal, it usually returns different hash values.
+
+Syntax:
+
+public int hashCode()
+
+It returns the hash code value for the given objects.
+Contract for hashcode() method in Java:
+
+If two objects are the same as per the equals(Object) method, then if we call the hashCode() method on each of the two
+objects, it must provide the same integer result.
+
+Note: As per the Java documentation, both the methods should be overridden to get the complete equality
+mechanism; using equals() alone is not sufficient. It means, if we override the equals(), we must override the
+hashcode() method.
+
+Note: HashSet and LinkedHashSet class internally uses equals and hashCode method to identify the duplicate objects.
+
+
+
+
+
+
+
+

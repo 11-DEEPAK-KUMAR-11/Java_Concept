@@ -1,0 +1,57 @@
+Q1) Explain the difference between ArrayList and LinkedList
+Answer-
+Both ArrayList and LinkedList are implementation of List interface in Java. Both classes are non-synchronized. But there are certain differences as well.
+
+Following are the important differences between ArrayList and LinkedList method.
+
+Sr. No.	Key	ArrayList	
+1	Internal Implementation-
+	ArrayList internally uses a dynamic array to store its elements.	
+	
+2	Manipulation -
+	ArrayList is slow as array manipulation is slower.
+		
+3	Implementation -
+	ArrayList implements only List.	
+	
+4	Access- 
+	ArrayList is faster in storing and accessing data.	
+
+
+  LinkedList
+1.Internal Implementation-
+  LinkedList uses Doubly Linked List to store its elements.
+  
+2.Manipulation -  
+  LinkedList is faster being node based as not much bit shifting required.
+  
+3.Implementation -
+  LinkedList implements List as well as Queue. It can acts as a queue as well.
+  
+4.Access -
+LinkedList is faster in manipulation of data.
+
+Example of ArrayList vs LinkedList
+JavaTester.java
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+public class JavaTester {
+   public static void main(String args[]) {
+      List<String> list = new ArrayList<>();
+      list.add("A");
+      list.add("B");
+      list.add("C");
+      list.add("D");
+      List<String> list1 = new LinkedList<>();
+      list1.add("A");
+      list1.add("B");
+      list1.add("C");
+      list1.add("D");
+      System.out.println(list);
+      System.out.println(list1);
+   }
+}
+Output
+[A, B, C, D]
+[A, B, C, D]

@@ -1,0 +1,70 @@
+Briefly explain the difference between Early and Late Binding with examples.
+Answer-
+
+early binding vs late binding:
+------------------------------
+
+binding : connecting the method body with method call is known as binding.
+
+1).if it is decided at compile time then it is known as early binding(method overloading
+or static polymorphism).
+
+2).if it is decided by the jvm at runtime then it is known as late binding (method overriding or dynamic polymorphism).
+
+
+Student.java:
+-------------
+
+package com.masai;
+
+public class Student {
+	
+	private int roll;
+	private String name;
+	private int marks;
+	
+
+	public Student() {
+		
+	}
+
+
+	public Student(int roll, String name, int marks) {
+		super();
+		this.roll = roll;
+		this.name = name;
+		this.marks = marks;
+	}
+	
+	
+	
+	public int getRoll() {
+		return roll;
+	}
+	public void setRoll(int roll) {
+		this.roll = roll;
+	}
+	
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public int getMarks() {
+		return marks;
+	}
+	
+	public void setMarks(int marks) {
+		this.marks = marks;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Student [roll=" + roll + ", name=" + name + ", marks=" + marks + "]";
+	}
+
+}

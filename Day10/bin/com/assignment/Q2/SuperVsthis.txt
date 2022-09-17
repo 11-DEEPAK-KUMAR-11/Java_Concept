@@ -1,0 +1,75 @@
+What is the use of ‘this’ and ‘super’ keywords in java ? Explain with an example.
+Answer-
+super keyword:
+-------------------
+
+--super keyword will represent the immediate parent class object.
+--this keyword represents the current class object. and it is also used 
+to access the instance members 
+of the class in the constructor and in the methods.
+
+--there are 2 uses of the super keyword:
+
+1.to represent the immediate parent class object.
+
+2.to call the parent class constructor.
+
+Example-
+A.java:
+---------
+
+package com.masai;
+
+public class A {
+	
+	int i=10;
+	
+	A(int i){
+		System.out.println("inside A constructor");	
+		this.i=20;
+		
+	}
+	
+	void funA() {
+		
+		System.out.println("inside funA of A");
+	}
+
+}
+
+Demo.java:
+---------------
+
+package com.masai;
+
+public class Demo extends A{
+		
+	int x=100;
+	
+	
+	Demo(){
+		super(10);
+		System.out.println("inside Demo constructor");
+	}
+	
+	void funX() {
+		
+		System.out.println("inside funX of Demo");
+	}
+
+	
+	public static void main(String[] args) {
+			
+		Demo d1 = new Demo();
+		
+		System.out.println(d1.x);
+		d1.funX();
+		
+		System.out.println(d1.i);
+		d1.funA();
+		
+		d1.toString();
+		
+	}
+
+}
